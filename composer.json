@@ -1,0 +1,12 @@
+{
+    "name": "dynamik-dev/app",
+    "description": "Dynamik Dev Laravel Docker",
+    "type": "project",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Chris Arter",
+            "email": "chris@arter.dev"
+        }
+    ]
+}
