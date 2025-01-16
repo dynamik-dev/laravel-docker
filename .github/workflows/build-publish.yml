@@ -22,7 +22,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker images
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/}
-          docker build -t dynamik-dev/laravel-docker:${VERSION} .
-          docker push dynamik-dev/laravel-docker:${VERSION}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/laravel/Dockerfile
+          push: true
+          tags: ghcr.io/dynamik-dev/laravel-docker:${{ github.ref_name }}
