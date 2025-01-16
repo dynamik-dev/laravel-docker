@@ -28,3 +28,6 @@ jobs:
           file: ./docker/laravel/Dockerfile
           push: true
           tags: ghcr.io/dynamik-dev/laravel-docker:${{ github.ref_name }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.visibility=public
