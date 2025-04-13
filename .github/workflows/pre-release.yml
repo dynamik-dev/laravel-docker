@@ -29,7 +29,7 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/dynamik-dev/laravel-docker-base:${{ github.ref_name }}
+            ghcr.io/dynamik-dev/laravel-docker-base:${{ github.event.release.tag_name }}
           labels: |
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.visibility=public
