@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-publish:
-    if: ! github.event.release.prerelease
+    if: ${{ github.event.release.prerelease == false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
