@@ -1,9 +1,0 @@
-services:
-  laravel:
-    image: dynamik-dev/laravel-docker:${TAG}
-    build:
-      context: .
-      dockerfile: docker/laravel/Dockerfile
-    environment:
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
-      - TAG=${TAG}

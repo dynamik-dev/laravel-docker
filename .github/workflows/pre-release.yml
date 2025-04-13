@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-and-publish:
+    if: github.event.release.prerelease
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,10 +26,10 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./docker/laravel/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/dynamik-dev/laravel-docker:${{ github.ref_name }}
+          tags: |
+            ghcr.io/dynamik-dev/laravel-docker-base:${{ github.ref_name }}
           labels: |
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
             org.opencontainers.image.visibility=public
